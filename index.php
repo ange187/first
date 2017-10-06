@@ -84,20 +84,14 @@
         "speed" => "120",
         "doors" => "3",
         "year" => "2017"
-    );
+    ); 
     $car["opel"] = array(
         "model" => "3",
         "speed" => "120",
         "doors" => "5",
         "year" => "2010"
     );
-    $name = "opel";
-    echo $name." ".$car[$name]["model"]." ".$car[$name]["speed"]." ".$car[$name]["doors"]." ".$car[$name]["year"];
-    echo "<br>";
-    $name = "bmv";
-    echo $name." ".$car[$name]["model"]." ".$car[$name]["speed"]." ".$car[$name]["doors"]." ".$car[$name]["year"];
-    echo "<br>";
-    $name = "toyota";
-    echo $name." ".$car[$name]["model"]." ".$car[$name]["speed"]." ".$car[$name]["doors"]." ".$car[$name]["year"];
-    echo "<br>";
-   // print_r($car[$name]);
+    foreach ($car as $name => $value) {
+        echo $name." ".$value["model"]." ".$value["speed"]." ".$value["doors"]." ".$value["year"];
+        echo "<br>";
+    }
