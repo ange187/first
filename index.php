@@ -131,6 +131,7 @@
                     </div><!--end social-->
                 </div><!--end col-md-3-->
             </div><!--end row-->
+
         </div><!--end container-->
     </div><!--end footer-->
         			<!-- For demo purposes Only ( You may delete this anytime :-) -->

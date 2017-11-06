@@ -24,6 +24,37 @@
             </div><!--end col-md-5--> 
             
         </div><!--end row-->
+        <section id="plan">
+            <div class="container">
+                <div style="padding-top: 50px;" class="title">
+
+                    <h2 class="flex fadeInUp animated animated">Книги</h2>
+                    <p class="description flex fadeInUp animated animated">Специальное предложение</p>
+                    <a href="/?page=addbook.php" style="float: left; margin: 0 5px;" class="btn btn-primary">добавить</a>
+                </div><!--end title-->
+                <div class="row">
+                 <?php
+                 require_once('lib.php');
+                 $pdo = connect();
+
+                 $sql = 'SELECT * FROM book';
+                 $stmt = $pdo->query($sql);
+                 $list = $stmt->fetchAll();
+
+
+                 foreach ($list as $key => $value) {
+
+                     echo '<a href="/?page=book.php&id='.$value['id_book'].'"><div class="price-table col-sm-3 flex fadeInUp animated" data-wow-delay="0.1s"><style>.price-table:hover{margin-top: 0px}</style><i class="fa fa-user"></i>';
+                     echo '<h6>'.$value['author'].'</h6><span class="dollar">&#8381;</span>';
+                     echo '<span class="price">'.$value['book_price'].'</span>';
+                     echo '<ul class="features">';
+                     echo '<li>'.$value['name'].'</li>';
+                     echo '</ul></div></a>';
+                 }
+                 ?>
+                </div>
+            </div><!--end container-->
+        </section><!--end plan-->
     </div><!--end zig-zag-->
 
 
